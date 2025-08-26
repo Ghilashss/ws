@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amirane World Shipping — Solutions de transport maritime et logistique fiables</title>
+  <meta name="description" content="Transport maritime, aérien et terrestre. Dédouanement, stockage & assurance. Réseau international de partenaires." />
+  <link rel="canonical" href="https://www.amiraneworldshipping.com/" />
+  <meta property="og:title" content="Amirane World Shipping" />
+  <meta property="og:description" content="Solutions de transport maritime et logistique fiables." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.amiran-world-shipping.com/" />
+  <meta name="theme-color" content="#0ea765" />
+  <!--link rel="manifest" href="/manifest.webmanifest" /-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // ⚠️ Mets ici ta clé publique EmailJS
+  emailjs.init("3uYI8Ov1HlzRDgXsb"); 
+
+  const form = document.getElementById("contact-form");
+  const hint = document.getElementById("contact-hint");
+
+  if (form) {
+
+form.addEventListener("submit", function (e) {
+      e.preventDefault();           // Bloque le comportement par défaut (suffisant)
+      e.stopImmediatePropagation(); // Bloque les autres scripts (bonne pratique ici)
+
+      hint.textContent = "Envoi en cours...";
+      hint.style.color = "#888";
+
+      emailjs.sendForm(
+        "service_7do2kjg",   // ⚠️ mets ton Service ID
+        "template_8305grs",  // ⚠️ mets ton Template ID
+        form
+      )
+      .then(() => {
+        hint.textContent = "✅ Message envoyé avec succès !";
+        hint.style.color = "#0ea765";
+        form.reset();
+      })
+      .catch((err) => {
+        console.error("Erreur EmailJS:", err);
+        hint.textContent = "❌ Une erreur est survenue. Vérifiez vos identifiants EmailJS.";
+        hint.style.color = "red";
+      });
+
+      return false; // sécurité
+    });
+  }
+});
+</script>
+
+
+<script>
+    // Attend que le contenu de la page soit chargé
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        const quoteForm = document.getElementById('quote-form');
+        const quoteHint = document.getElementById('quote-hint');
+        const submitButton = quoteForm.querySelector('button[type="submit"]');
+
+        quoteForm.addEventListener('submit', function (event) {
+            // Empêche le comportement par défaut du formulaire (qui recharge la page)
+            event.preventDefault();
+
+            // Change le texte du bouton et le désactive pour éviter les clics multiples
+            const originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Envoi en cours...';
+            submitButton.disabled = true;
+            quoteHint.textContent = ''; // Efface l'ancien message
+
+            // VOS CLÉS EMAILJS À REMPLACER
+            const serviceID = 'service_fsrui5q';
+            const templateID = 'template_tlhz9l5';
+
+            // La fonction sendForm d'EmailJS
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    // En cas de succès
+                    quoteHint.textContent = '✅ Votre demande de devis a bien été envoyée !';
+                    quoteHint.style.color = 'green';
+                    quoteForm.reset(); // Réinitialise les champs du formulaire
+                }, (err) => {
+                    // En cas d'erreur
+                    quoteHint.textContent = '❌ Une erreur s\'est produite. ' + JSON.stringify(err);
+                    quoteHint.style.color = 'red';
+                })
+                .finally(() => {
+                    // S'exécute après le succès ou l'échec
+                    submitButton.textContent = originalButtonText; // Rétablit le texte original du bouton
+                    submitButton.disabled = false; // Réactive le bouton
+                });
+        });
+    });
+
+</script>
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand">
+
+        <div class="logo-container">
+  <img src="images/logo-amirane.png" alt="Amiane World Shipping Logo" class="logo-img">
+  <!--span class="brand-name" data-i18n="brand">Amirane World Shipping</span-->
+</div>
+
+      </a>
+      <nav class="nav">
+        <a href="#home" data-i18n="nav.home">Accueil</a>
+        <a href="#about" data-i18n="nav.about">À propos</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#tracking" data-i18n="nav.tracking">Suivi</a>
+        <a href="#quote" data-i18n="nav.quote" class="btn btn--primary">Demander un devis</a>
+        <a href="#contact" data-i18n="nav.contact" class="btn btn--ghost">Contact</a>
+      </nav>
+      <div class="lang-switch">
+        <button data-lang="fr" aria-pressed="true">FR</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="ar">AR</button>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="stars"></div>
+ <div class="stars2"></div>
+ <div class="stars3"></div>
+    <div class="bg-overlay"></div>
+
+
+
+    <!-- 1. Accueil -->
+    <section id="home" class="section hero">
+
+    <div class="hero-logo-block">
+      <img src="images/logo-amirane-express.png" alt="Logo Amirane World Shipping" class="hero-logo">
+      <p class="hero-tagline" data-i18n="hero.text">
+          Votre partenaire de confiance pour un transport maritime aérien et terrestre fluide, sécurisé et sans frontières.
+        </p>
+      <!--span class="hero-tagline"></span-->
+      <!--span class="hero-tagline">aérien et terrestre fluide, sécurisé et sans frontières.</span-->
+    </div>
+
+       <!-- Slider 3D regroupé -->
+<!--div class="home-gallery reveal">
+  <div class="swiper testimonial-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/photo1.jpg" alt="Visuel 1"></div>
+      <div class="swiper-slide"><img src="images/photo2.jpg" alt="Visuel 2"></div>
+      <div class="swiper-slide"><img src="images/photo3.jpg" alt="Visuel 3"></div>
+      < Duplique autant de slides que nécessaire -->
+    </div>
+  </div>
+</div>
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container grid-2">
+        <div class="hero-text reveal">
+          <h1 data-i18n="home.title">Solutions de transport maritime et logistique fiables</h1>
+          <p class="lead" data-i18n="home.lead">
+            Fret maritime (FCL/LCL), aérien et terrestre, avec un réseau mondial de partenaires.
+          </p>
+          <div class="cta">
+            <a href="#quote" class="btn btn--primary btn--lg" data-i18n="home.cta.quote">Demander un devis</a>
+            <a href="#tracking" class="btn btn--secondary btn--lg" data-i18n="home.cta.track">Suivi de votre expédition</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <!-- Placeholder illustration/map/ship -->
+          <div class="card card--glass">
+            <div class="stats">
+              <div><strong>120+</strong><span data-i18n="home.stats.ports">Ports couverts</span></div>
+              <div><strong>72h</strong><span data-i18n="home.stats.response">Devis en 72h max</span></div>
+              <div><strong>24/7</strong><span data-i18n="home.stats.support">Support</span></div>
+            </div>
+            <img src="images/maritime.jpg" 
+           alt="Carte des routes maritimes mondiales" 
+           class="map-image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. À propos -->
+    <section id="about" class="section">
+      <div class="container narrow">
+        <h2 class="section-title reveal" data-i18n="about.title">À propos</h2>
+        <div class="container about-header">
+    <img src="images/logo-amirane-express.png" alt="Amirane Express Logo" class="about-logo">
+        <p class="reveal" data-i18n="about.text">
+          Société de transport maritime, travaillant avec un réseau de représentants dans les principaux ports mondiaux.
+        </p>
+      </div>
+    </section>
+
+   <!-- 3. Services -->
+<section id="services" class="section section--alt">
+  <div class="container">
+    <h2 class="section-title reveal" data-i18n="services.title">Services</h2>
+    <p data-i18n="services.note">
+  Nous mettons un point d'honneur à offrir des solutions rapides, fiables et adaptées à vos besoins.
+</p>
+    <div class="grid-3">
+      <article class="card reveal">
+        <img src="icons/ship.png" alt="Transport maritime" class="service-logo">
+        <h3 data-i18n="services.sea.title">Transport maritime (FCL / LCL)</h3>
+        <p data-i18n="services.sea.desc">Solutions complètes conteneur & groupage.</p>
+      </article>
+
+      <article class="card reveal">
+        <img src="icons/airplane.png" alt="Transport aérien" class="service-logo">
+        <h3 data-i18n="services.air.title">Transport aérien</h3>
+        <p data-i18n="services.air.desc">Livraisons rapides et prioritaires.</p>
+      </article>
+
+      <article class="card reveal">
+        <img src="icons/truck.png" alt="Transport terrestre" class="service-logo">
+        <h3 data-i18n="services.road.title">Transport terrestre</h3>
+        <p data-i18n="services.road.desc">Routier et intermodal porte-à-porte.</p>
+      </article>
+
+      <article class="card reveal">
+        <img src="icons/file.png" alt="Dédouanement" class="service-logo">
+        <h3 data-i18n="services.clearance.title">Dédouanement</h3>
+        <p data-i18n="services.clearance.desc">Formalités et conformité douanière.</p>
+      </article>
+
+      <article class="card reveal">
+        <img src="icons/moving-box.png" alt="Stockage & assurance" class="service-logo">
+        <h3 data-i18n="services.storage.title">Stockage & assurance</h3>
+        <p data-i18n="services.storage.desc">Entrepôts sécurisés et couverture adaptée.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- 4. Suivi -->
+    <section id="tracking" class="section">
+      <div class="container narrow">
+        <h2 class="section-title reveal" data-i18n="tracking.title">Suivi</h2>
+        <p data-i18n="tracking.note">Suivez vos expéditions en temps réel grâce à notre système de suivi précis et sécurisé.
+</p>
+        <form class="form row reveal" id="tracking-form" novalidate>
+          <label class="field">
+            <span data-i18n="tracking.label">Numéro de connaissement (B/L)</span>
+            <input type="text" name="bl" inputmode="numeric" placeholder="EX: AMS123456789" required />
+          </label>
+          <button class="btn btn--primary" type="submit" data-i18n="tracking.submit">Suivre</button>
+          <p class="form-hint" id="tracking-hint"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- 5. Demande de devis -->
+    <section id="quote" class="section section--alt">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="quote.title">Demande de devis</h2>
+        <p data-i18n="devis.note">
+Obtenez rapidement une estimation claire et personnalisée pour vos besoins en transport et logistique.
+</p>
+
+        <form class="form grid-2 reveal" id="quote-form" novalidate>
+          <label class="field">
+            <span data-i18n="quote.from">Port de départ</span>
+            <input type="text" name="from" placeholder="Ex: Alger (DZALG)" required />
+          </label>
+          <label class="field">
+            <span data-i18n="quote.to">Port d’arrivée</span>
+            <input type="text" name="to" placeholder="Ex: Marseille (FRMRS)" required />
+          </label>
+          <label class="field">
+            <span data-i18n="quote.cargo">Type de marchandise</span>
+            <input type="text" name="cargo" placeholder="Ex: Pièces auto" required />
+          </label>
+          <label class="field">
+            <span data-i18n="quote.weight">Poids / volume</span>
+            <input type="text" name="weight" placeholder="Ex: 12 t / 28 m³" required />
+          </label>
+          <label class="field">
+            <span data-i18n="quote.contact">Coordonnées</span>
+            <input type="email" name="email" placeholder="email@exemple.com" required />
+          </label>
+          <label class="field">
+            <span data-i18n="quote.phone">Téléphone</span>
+            <input type="tel" name="phone" placeholder="+213 ..." />
+          </label>
+          <div class="full">
+            <button class="btn btn--primary" type="submit" data-i18n="quote.submit">Obtenir un devis</button>
+            <p class="form-hint" id="quote-hint"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 6. Réseau -->
+    <section id="network" class="section">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="network.title">Réseau de partenaires</h2>
+        <p class="reveal narrow" data-i18n="network.text">
+          Nous couvrons de nombreux ports à travers notre réseau de partenaires et représentants internationaux.
+        </p>
+        <div class="card map-card reveal">
+          <div class="map-placeholder large"><img src="images/map.jpg" 
+         alt="Carte simple des destinations" 
+         class="map-image"></div>
+          <div class="destinations">
+            <span class="tag">Alger</span>
+            <span class="tag">Marseille</span>
+            <span class="tag">Valence</span>
+            <span class="tag">Dubaï</span>
+            <span class="tag">Shanghai</span>
+            <span class="tag">Singapour</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Contact -->
+    <section id="contact" class="section section--alt">
+          <div class="container reveal" style="text-align:center; margin-bottom: 2rem;">
+    <h2 class="section-title" data-i18n="contact.title">Contactez-nous</h2>
+    <p class="lead" data-i18n="contact.intro">
+      Une question, un devis ou un partenariat ?  
+      Notre équipe est à votre écoute pour vous répondre rapidement.
+    </p>
+  </div>
+      <div class="container grid-2">
+        <div class="contact-info reveal services-grid">
+  <div class="service-card">
+    <!--img src="icons/location.svg" alt="Adresse" class="contact-icon"-->
+    <i class="fas fa-map-marker-alt"></i>
+    <h4 data-i18n="contact.addressLabel">Adresse</h4>
+    <p data-i18n="contact.address">Hassi Messaoud, Ouargla, Algérie</p>
+  </div>
+
+  <div class="service-card">
+    <!--img src="icons/phone.svg" alt="Téléphone" class="contact-icon"-->
+    <i class="fas fa-phone-alt"></i>
+    <h4 data-i18n="contact.phoneLabel">Téléphone</h4>
+    <p><a href="tel:+213XXXXXXXXX">+213 XX XX XX XX</a></p>
+  </div>
+
+  <div class="service-card">
+    <!--img src="icons/email.svg" alt="Email" class="contact-icon"-->
+      <i class="fas fa-envelope"></i> 
+    <h4 data-i18n="contact.emailLabel">Email</h4>
+    <p><a href="mailto:contact@amirane-world-shipping.com">contact@amiran-world-shipping.com</a></p>
+  </div>
+</div>
+<form class="form reveal" id="contact-form" novalidate>
+  <label class="field">
+    <span>Nom</span>
+    <input type="text" name="name" required />
+  </label>
+  <label class="field">
+    <span>Email</span>
+    <input type="email" name="email" required />
+  </label>
+  <label class="field">
+    <span>Message</span>
+    <textarea name="message" rows="4" required></textarea>
+  </label>
+  <button class="btn btn--primary" type="submit">Envoyer</button>
+  <p class="form-hint" id="contact-hint"></p>
+</form>
+      </div>
+    </section>
+    
+  </main>
+  
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> <span data-i18n="brand">Amirane World Shipping</span> — <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+      <p class="meta"><span data-i18n="footer.ssl">SSL activé (https)</span> · <span data-i18n="footer.pwa">PWA prête</span> · <span data-i18n="footer.seo">SEO optimisé</span></p>
+    </div>
+  </footer>
+   <script src="main.js" defer></script>
+   <footer class="footer-express">
+  <div class="container footer-grid">
+    
+    <!-- Colonne 1 : Logo + description -->
+    <div class="footer-col">
+      <img src="images/logo-amirane.png" alt="Amirane Express Logo" class="footer-logo">
+      <p  data-i18n="hero.text">
+          Votre partenaire de confiance pour un transport maritime aérien et terrestre fluide, sécurisé et sans frontières.
+        </p>
+    </div>
+
+    <!-- Colonne 2 : Liens rapides -->
+    <div class="footer-col">
+      <h4>Liens Rapides</h4>
+      <ul>
+        <li><a href="#home" data-i18n="nav.home">Accueil</a></li>
+        <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#tracking" data-i18n="nav.tracking">Suivi</a></li>
+      </ul>
+    </div>
+
+    <!-- Colonne 3 : Nos Services -->
+    <div class="footer-col">
+      <h4>Nos Services</h4>
+      <ul>
+        <li><a data-i18n="services.sea.title">Transport maritime (FCL / LCL) </a></li>
+        <li><a data-i18n="services.air.title">Transport aérien </a></li>
+        <li><a  data-i18n="services.road.title">Transport terrestre</a></li>
+        <li><a  data-i18n="services.clearance.title">Dédouanement</a></li>
+        <li><a  data-i18n="services.storage.title">Stockage & assurance</a></li>
+      </ul>
+    </div>
+
+    <!-- Colonne 4 : Contact -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><a href="mailto:contact@amirane-world-shipping.com">contact@amirane-world-shipping.com</a></p>
+      <p>0549 15 20 16</p>
+      <p>0776 50 70 28</p>
+      <p>WhatsApp: 0549 15 20 16</p>
+    </div>
+
+  </div>
+
+  <!-- Bas de page -->
+  <div class="footer-bottom">
+    <!--p>© 2025 Amirane world shipping. Tous droits réservés.</p-->
+    <p><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></p>
+  </div>
+</footer>
+
+<nav class="mobile-bottom-nav">
+  <a href="#home">
+    <i class="fas fa-ship"></i>
+    <span>Accueil</span>
+  </a>
+  <a href="#about">
+    <i class="fas fa-building"></i>
+    <span>À propos</span>
+  </a>
+  <a href="#services">
+    <i class="fas fa-boxes"></i>
+    <span>Services</span>
+  </a>
+  <a href="#tracking">
+    <i class="fas fa-route"></i>
+    <span>Suivi</span>
+  </a>
+  <a href="#contact">
+    <i class="fas fa-headset"></i>
+    <span>Contact</span>
+  </a>
+</nav>
+
+
+
+
+
+</body>
+</html>
